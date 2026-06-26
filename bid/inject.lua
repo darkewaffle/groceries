@@ -14,7 +14,6 @@ function InjectBidPacket(ItemID, BidAmount, StackSize)
 	}, 0x0E)
 
 	if PLAYER_SETTINGS.Bids.EnableBidding == true then
-		--WINDOWER_PACKETS.inject(BidPacket)
-		print("we bidding")
+		WINDOWER_PACKETS.inject(BidPacket)
 	end
 end
