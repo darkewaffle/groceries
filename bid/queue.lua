@@ -246,10 +246,8 @@ function SetBidResultWindow()
 	BidResultWindowEnd = os.clock() + BidResultWindowDuration
 end
 
-function PrintQueue()
+function PrintBidQueue()
 	for Index, BidData in ipairs(BidQueue) do
-
--- table.insert(BidQueue, {["Name"]=ItemName, ["ID"]=ItemID, ["BidAmount"]=BidAmount, ["Quantity"]=ItemQuantity, ["StackSize"]=QuantityToStackSize(Quantity)})
 
 		local ItemName = BidData["Name"]
 		local ItemID = BidData["ID"]
@@ -257,24 +255,6 @@ function PrintQueue()
 		local Quantity = BidData["Quantity"]
 		local StackSize = BidData["StackSize"]
 
-		--[[
-		local ItemRare = GetItemRare(ItemID)
-
-			local ItemID = GetItemID(ItemName)
-			local ValidID = ItemID and ItemID > 0
-			local ValidAmount = BidAmount > 0 and BidAmount <= MaximumBid
-
-			local PlayerMaxBid = PLAYER_SETTINGS.Bids.MaxBid or MaximumBid
-			local AmountAllowedByPlayer = BidAmount <= PlayerMaxBid
-
-			local CanAfford = CurrentGil >= BidAmount
-			local ItemStackSize = GetItemStackSize(ItemID)
-			local ValidQuantity = ItemQuantity == 1 or ItemQuantity == ItemStackSize
-			local ItemRare = GetItemRare(ItemID)
-			local ValidRare = not ItemRare or not GetPlayerHasItem(ItemID)
-		]]
-
 		print(ItemName, ItemID, BidAmount, Quantity, StackSize)
-
 	end
 end
