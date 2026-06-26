@@ -1,7 +1,7 @@
 _addon = {
 	name = 'Groceries',
 	author = 'darkwaffle',
-	version = '0.5',
+	version = '0.5.0',
 	command = 'gro',
 }
 
