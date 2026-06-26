@@ -1,13 +1,14 @@
 # Groceries
 
 [Example Groceries Bid UI](https://i.imgur.com/6MdNNVY.png)
-[Example Shopping Lists]
+
+[Example Shopping Lists](https://github.com/darkewaffle/groceries/blob/main/shopping_lists.lua)
 
 ## Summary
 Groceries is designed to allow auction house users to define lists of items that they want to bid on repeatedly and then automatically bid on each item in a selected list. This could be useful for bidding on items needed in large quantities like currency or escutcheon spheres, obscure collections of items like Aeonic or Abyssea pop sets or just restocking your pantry with food, medicine and crystals.
 
 ## How To
-1. Download groceries.lua, settings.lua, shopping_lists.lua and each folder. groceries.lua and the folders can be found in the zip file under [Releases](https://github.com/darkewaffle/groceries/releases). You only need to download the settings and shopping_lists file if you do not already have them, although the settings file could change over time if new settings are added.
+1. Download groceries.lua, settings.lua, shopping_lists.lua and each folder. ~~groceries.lua and the folders can be found in the zip file under [Releases](https://github.com/darkewaffle/groceries/releases).~~ You only need to download the settings and shopping_lists file if you do not already have them, although the settings file could change over time if new settings are added.
 2. Place them in Windower\addons\groceries.
 3. Follow the instructions and examples in shopping_lists.lua to create your own shopping lists. 
 4. Follow the instructions and examples in settings.lua to customize Groceries. You may want to leave them at their default settings until you've taken your shopping lists through a few demo runs.
