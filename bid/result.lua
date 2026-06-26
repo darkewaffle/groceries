@@ -14,7 +14,6 @@ function ParseBidResult(id, original, modified, injected, blocked)
 		local Quantity = BidResultPacket["Count"]
 
 		RecordBidResult(ItemID, BidAmount, Quantity, Purchased)
-		UpdateUI()
 	end
 end
 
