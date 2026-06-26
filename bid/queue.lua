@@ -6,6 +6,8 @@ local TerminateBidding = false
 local BidDemo = PLAYER_SETTINGS.Bids.DefaultDemo == true
 local BidDelay = 10
 local BidDelayFuzz = 3
+local BidResultWindowEnd = 0
+local BidResultWindowDuration = 3
 
 local ListPosition_Name = 1
 local ListPosition_BidAmount = 2
@@ -153,6 +155,7 @@ end
 
 function EndBidding()
 	UpdateUI()
+	SetBidResultWindow()
 	BidQueue = {}
 	PreviousBid = {}
 	QueueItemsComplete = 0
@@ -229,4 +232,16 @@ function GetBiddingPercentComplete()
 	else
 		return 0
 	end
+end
+
+function GetBidResultWindowOpen()
+	if os.clock() <= BidResultWindowEnd then
+		return true
+	else
+		return false
+	end
+end
+
+function SetBidResultWindow()
+	BidResultWindowEnd = os.clock() + BidResultWindowDuration
 end

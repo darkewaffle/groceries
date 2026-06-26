@@ -107,7 +107,7 @@ function OnChunkIn(id, original, modified, injected, blocked)
 		
 		-- Auction result
 		elseif id == 0x04C then
-			if GetBiddingInProgress() then
+			if GetBiddingInProgress() or GetBidResultWindowOpen() then
 				ParseBidResult(id, original, modified, injected, blocked)
 				UpdateUI()
 			end
