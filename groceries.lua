@@ -73,11 +73,16 @@ function OnCommand(...)
 		ReloadPlayerLists()
 	
 	elseif CommandParameters[1] == "c" or CommandParameters[1] == "confirm" then
-		HideUI()
+		if not GetBiddingInProgress() then
+			DestroyUI()
+		end
 
 	elseif CommandParameters[1] == "h" or CommandParameters[1] == "hide" then
 		HideUI()
 	
+	elseif CommandParameters[1] == "show" then
+		ShowUI()
+
 	elseif CommandParameters[1] == "help" then
 		ShowHelp()
 	end
