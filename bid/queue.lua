@@ -73,7 +73,7 @@ function ValidateListIntoQueue(ListName)
 				end
 
 				for j = 1, MaxPurchased do
-					table.insert(BidQueue, {["Name"]=ItemName, ["ID"]=ItemID, ["BidAmount"]=BidAmount, ["Quantity"]=ItemQuantity, ["StackSize"]=QuantityToStackSize(Quantity)})
+					table.insert(BidQueue, {["Name"]=ItemName, ["ID"]=ItemID, ["BidAmount"]=BidAmount, ["Quantity"]=ItemQuantity, ["StackSize"]=QuantityToStackSize(ItemQuantity)})
 				end
 			end
 		end
@@ -244,4 +244,37 @@ end
 
 function SetBidResultWindow()
 	BidResultWindowEnd = os.clock() + BidResultWindowDuration
+end
+
+function PrintQueue()
+	for Index, BidData in ipairs(BidQueue) do
+
+-- table.insert(BidQueue, {["Name"]=ItemName, ["ID"]=ItemID, ["BidAmount"]=BidAmount, ["Quantity"]=ItemQuantity, ["StackSize"]=QuantityToStackSize(Quantity)})
+
+		local ItemName = BidData["Name"]
+		local ItemID = BidData["ID"]
+		local BidAmount = BidData["BidAmount"]
+		local Quantity = BidData["Quantity"]
+		local StackSize = BidData["StackSize"]
+
+		--[[
+		local ItemRare = GetItemRare(ItemID)
+
+			local ItemID = GetItemID(ItemName)
+			local ValidID = ItemID and ItemID > 0
+			local ValidAmount = BidAmount > 0 and BidAmount <= MaximumBid
+
+			local PlayerMaxBid = PLAYER_SETTINGS.Bids.MaxBid or MaximumBid
+			local AmountAllowedByPlayer = BidAmount <= PlayerMaxBid
+
+			local CanAfford = CurrentGil >= BidAmount
+			local ItemStackSize = GetItemStackSize(ItemID)
+			local ValidQuantity = ItemQuantity == 1 or ItemQuantity == ItemStackSize
+			local ItemRare = GetItemRare(ItemID)
+			local ValidRare = not ItemRare or not GetPlayerHasItem(ItemID)
+		]]
+
+		print(ItemName, ItemID, BidAmount, Quantity, StackSize)
+
+	end
 end
