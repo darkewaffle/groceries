@@ -10,6 +10,10 @@
 -- So if you want to purchase only 5 of an item and Groceries successfully purchases 2 then you may want to reduce the
 -- Max Purchased amount for that item from 5 to 3 before you run that list again.
 
+-- ShoppingLists.main is the 'default' list that Groceries will select if you simply run a 'gro get' command.
+-- It is not required that you use it or have it defined but any other list will have to be input by name in the command such as 'gro get fire'.
+
+
 local ShoppingLists = {}
 
 
@@ -30,5 +34,6 @@ ShoppingLists.fire =
 	{"Fire Crystal",               5000,              12,               2},
 	{"Fire Cluster",               5000,               1,               2},
 }
+
 
 return ShoppingLists
