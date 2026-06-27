@@ -37,7 +37,8 @@ function GetReceiptText()
 			end
 			Quantity = Quantity .. string.rep(Buffer, 4)
 
-			local BidAmount = string.format("%" .. BidAmountLength .. "sg", Bid["BidAmount"])
+			local BidAmount = NumberToStringWithCommas(Bid["BidAmount"]) .. "g"
+			BidAmount = string.rep(Buffer, BidAmountLength - #BidAmount + 1) .. BidAmount
 
 			local LineItem = Name .. Quantity .. BidAmount
 			if i < #Results then
@@ -54,7 +55,7 @@ function GetReceiptText()
 			ReceiptText = ReceiptText .. LineItem
 
 			if i == #Results then
-				local SpentString = string.format("%" .. BidAmountLength .. "sg", TotalSpent)
+				local SpentString = NumberToStringWithCommas(TotalSpent) .. "g"
 				local SpentLine = "\n\n" .. ReceiptSpentHeader .. string.rep(Buffer, ReceiptCharacterWidth - #ReceiptSpentHeader - #SpentString) .. SpentString
 				ReceiptText = ReceiptText .. SpentLine
 			end

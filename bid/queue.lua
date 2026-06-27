@@ -108,7 +108,7 @@ function SendBids()
 		local StackSize = BidData["StackSize"]
 		local ItemRare = GetItemRare(ItemID)
 
-		local ChatLabel = ItemName .. " x" .. Quantity .. " for " .. BidAmount .. "g"
+		local ChatLabel = ItemName .. " x" .. Quantity .. " for " .. NumberToStringWithCommas(BidAmount) .. "g"
 		local SleepAfterBid = false
 
 		local CurrentGil = GetPlayerGil()
