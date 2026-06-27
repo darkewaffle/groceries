@@ -1,6 +1,6 @@
 # Groceries
 
-[Example Groceries Bid UI](https://i.imgur.com/6MdNNVY.png)
+[Example Groceries Bid UI](https://i.imgur.com/VBA1e8k.png)
 
 [Example Shopping Lists](https://github.com/darkewaffle/groceries/blob/main/shopping_lists.lua)
 
