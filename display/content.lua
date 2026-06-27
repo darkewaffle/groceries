@@ -8,7 +8,7 @@ local BidLogCharacterWidth = 110
 local BidLogEmptyLine = string.rep(" ", BidLogCharacterWidth)
 -- +1 = the "x" added to the quantity display
 local ReceiptCharacterWidth = NameLength + QuantityLength + 1 + BufferBetweenQtyAmt + BidAmountLength
-local ReceiptEmptyLine = "- Bid Receipt -"
+local ReceiptEmptyLine = "- Bid Receipt -" .. "\n"
 local EmptyPadding = string.rep(" ", math.floor(.5*(ReceiptCharacterWidth - #ReceiptEmptyLine)))
 ReceiptEmptyLine = EmptyPadding .. ReceiptEmptyLine .. EmptyPadding
 
