@@ -1,12 +1,13 @@
 local NameLength = 24
 local QuantityLength = 3
-local BidAmountLength = 9
+local BidAmountLength = 11
 local Buffer = " "
+local BufferBetweenQtyAmt = 3
 
 local BidLogCharacterWidth = 110
 local BidLogEmptyLine = string.rep(" ", BidLogCharacterWidth)
--- +1 = the "x" added to the quantity display, 4 is the number of spaces between Quantity and BidAmount
-local ReceiptCharacterWidth = NameLength + QuantityLength + 1+ 4 + BidAmountLength
+-- +1 = the "x" added to the quantity display
+local ReceiptCharacterWidth = NameLength + QuantityLength + 1 + BufferBetweenQtyAmt + BidAmountLength
 local ReceiptEmptyLine = "- Bid Receipt -"
 local EmptyPadding = string.rep(" ", math.floor(.5*(ReceiptCharacterWidth - #ReceiptEmptyLine)))
 ReceiptEmptyLine = EmptyPadding .. ReceiptEmptyLine .. EmptyPadding
@@ -35,7 +36,7 @@ function GetReceiptText()
 			if #Quantity == 2 then
 				Quantity = Buffer .. Quantity
 			end
-			Quantity = Quantity .. string.rep(Buffer, 4)
+			Quantity = Quantity .. string.rep(Buffer, BufferBetweenQtyAmt)
 
 			local BidAmount = NumberToStringWithCommas(Bid["BidAmount"]) .. "g"
 			BidAmount = string.rep(Buffer, BidAmountLength - #BidAmount + 1) .. BidAmount
