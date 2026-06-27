@@ -6,6 +6,9 @@
 -- both default to 1. Zero is a valid Max Purchased amount if you want an item to remain in the list
 -- but do not wish to make any bids on it currently.
 
+-- Additionally please note that if you successfully purchase an item the Max Purchased amount in the list will not be altered by Groceries.
+-- So if you want to purchase only 5 of an item and Groceries successfully purchases 2 then you may want to reduce the
+-- Max Purchased amount for that item from 5 to 3 before you run that list again.
 
 local ShoppingLists = {}
 
