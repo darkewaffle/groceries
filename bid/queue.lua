@@ -30,11 +30,11 @@ function ValidateListIntoQueue(ListName)
 	for Index, ItemData in ipairs(ListTable) do
 
 		local ItemName = ItemData[ListPosition_Name]
-		local BidAmount = ItemData[ListPosition_BidAmount]
+		local BidAmount = ValidateBidAmount(ItemData[ListPosition_BidAmount])
 		local ItemQuantity = ItemData[ListPosition_Quantity] or 1
 		local MaxPurchased = ItemData[ListPosition_MaxPurchased] or 1
 
-		if not ItemName or not BidAmount or type(BidAmount) ~= "number" then
+		if not ItemName or not BidAmount then
 			ChatError(ListLabel,"Record " .. Index .. " contains invalid name or bid amount.")
 		else
 
@@ -256,5 +256,19 @@ function PrintBidQueue()
 		local StackSize = BidData["StackSize"]
 
 		print(ItemName, ItemID, BidAmount, Quantity, StackSize)
+	end
+end
+
+function ValidateBidAmount(Input)
+	if type(Input) == "number" then
+		return Input
+	elseif type(Input) == "string" then
+		-- Remove any commas or spaces from a number input as string
+		Input = string.gsub(Input, " ", "")
+		Input = string.gsub(Input, ",", "")
+		Input = tonumber(Input)
+		return Input
+	else
+		return nil
 	end
 end
