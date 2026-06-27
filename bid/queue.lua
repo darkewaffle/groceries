@@ -37,7 +37,7 @@ function ValidateListIntoQueue(ListName)
 		if not ItemName or not BidAmount then
 			ChatError(ListLabel,"Record " .. Index .. " contains invalid name or bid amount.")
 		else
-
+			local ItemLabel = ItemName .. " x" .. ItemQuantity
 			local ItemID = GetItemID(ItemName)
 			local ValidID = ItemID and ItemID > 0
 			local ValidAmount = BidAmount > 0 and BidAmount <= MaximumBid
@@ -56,13 +56,13 @@ function ValidateListIntoQueue(ListName)
 			elseif not GetItemAuctionable(ItemID) then
 				ChatError(ListLabel, ItemName .. " cannot be auctioned.")
 			elseif not ValidAmount then
-				ChatError(ListLabel, ItemName .. " bid amount is not valid: " .. BidAmount)
+				ChatError(ListLabel, ItemLabel .. " bid amount is not valid: " .. BidAmount)
 			elseif not CanAfford then
-				ChatError(ListLabel, ItemName .. " bid amount is higher than current gil.")
+				ChatError(ListLabel, ItemLabel .. " bid amount is higher than current gil.")
 			elseif not AmountAllowedByPlayer then
-				ChatError(ListLabel, ItemName .. " bid amount is higher than MaxBid setting.")
+				ChatError(ListLabel, ItemLabel .. " bid amount is higher than MaxBid setting.")
 			elseif not ValidQuantity then
-				ChatError(ListLabel, ItemName .. " quantity is not valid: " .. ItemQuantity)
+				ChatError(ListLabel, ItemLabel .. " quantity is not valid.")
 			elseif not ValidRare then
 				ChatWarning(ListLabel, ItemName .. " is rare and you already possess it. Not added to queue.")
 			else
