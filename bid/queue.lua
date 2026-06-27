@@ -42,7 +42,7 @@ function ValidateListIntoQueue(ListName)
 			local ValidID = ItemID and ItemID > 0
 			local ValidAmount = BidAmount > 0 and BidAmount <= MaximumBid
 
-			local PlayerMaxBid = PLAYER_SETTINGS.Bids.MaxBid or MaximumBid
+			local PlayerMaxBid = ValidateBidAmount(PLAYER_SETTINGS.Bids.MaxBid) or MaximumBid
 			local AmountAllowedByPlayer = BidAmount <= PlayerMaxBid
 
 			local CanAfford = CurrentGil >= BidAmount

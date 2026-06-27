@@ -21,10 +21,10 @@ Settings.UI.BGBlue = 0
 Settings.UI.Padding = 6
 
 
--- This controls the maximum amount you can bid. Any shopping list entries greater than this amount will not be added to the bid queue.
--- Think of this as a double check or typo prevention.
--- If your MaxBid setting is 1000000 and you want to bid 200000 on an item but accidentally type 2000000 then the bid will not be submitted.
-Settings.Bids.MaxBid = 1000000
+-- This controls the maximum amount you can bid. Any shopping list bid amounts greater than MaxBid will not be added to the bid queue.
+-- Just like bids in your shopping lists this can be formatted as a number or a string. This is simply a safety measure in case of typos.
+-- If your MaxBid setting is "1,000,000" and you want to bid 200000 on an item but accidentally type 2000000 then the bid will not be submitted.
+Settings.Bids.MaxBid = "3,000,000"
 
 -- Controls if Groceries defaults to demo mode. In demo mode bids are not sent to the server and bid results are randomly generated.
 -- This can be useful for testing how Groceries works, what your UI looks like and the conditions that will interrupt bidding.
