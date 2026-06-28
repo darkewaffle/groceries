@@ -5,7 +5,7 @@ local BiddingInProgress = false
 local TerminateBidding = false
 local BidDemo = PLAYER_SETTINGS.Bids.DefaultDemo == true
 local BidDelay = 10
-local BidDelayFuzz = 3
+local BidDelayFuzz = 5
 local BidResultWindowEnd = 0
 local BidResultWindowDuration = 3
 
